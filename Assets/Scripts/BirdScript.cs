@@ -1,22 +1,32 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+
+using DefaultNamespace;
+
 using UnityEngine;
 
 public class BirdScript : MonoBehaviour
 {
-    [SerializeField] private float _launchForce;
+    private BirdState _birdState;
     [SerializeField] private float _resetDelay;
     [SerializeField] private float _maxDrag = 5;
     
     private Vector2 _startPos;
     private Rigidbody2D _rigidBody;
     private SpriteRenderer _spriteRenderer;
-
-    private void Awake()
+    
+    public BirdState State
+    {
+        set => _birdState = value;
+    }
+    
+    private void OnEnable()
     {
         _rigidBody = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _birdState = GameObject.Find("SkinController").GetComponent<BirdSkinMgr>()
+                .GETState(_rigidBody.gameObject);
     }
 
     void Start()
@@ -38,8 +48,12 @@ public class BirdScript : MonoBehaviour
         direction.Normalize();
         
         _rigidBody.isKinematic = false;
-        _rigidBody.AddForce(direction*_launchForce);
-        
+        Debug.Log(this._birdState);
+        _rigidBody = _birdState.SetSkin(_rigidBody);
+        Debug.Log(this._birdState);
+
+        //_birdState.sendFlying(direction, _rigidBody);
+
         _spriteRenderer.color = Color.white;
     }
 

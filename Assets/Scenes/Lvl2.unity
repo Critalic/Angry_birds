@@ -6883,7 +6883,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5698555616348777753, guid: 2d498bd771da28b4f9329b8cf72b8cb8, type: 3}
       propertyPath: orthographic size
-      value: 3.4002419
+      value: 3.3884182
       objectReference: {fileID: 0}
     - target: {fileID: 5698555616348777958, guid: 2d498bd771da28b4f9329b8cf72b8cb8, type: 3}
       propertyPath: m_LocalPosition.x

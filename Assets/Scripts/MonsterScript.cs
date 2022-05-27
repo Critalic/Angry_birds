@@ -10,13 +10,13 @@ public class MonsterScript : MonoBehaviour
     private Boolean _isAlive = true;
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (KnockedOut(other) && _isAlive)
+        if (NotKnockedOut(other) && _isAlive)
         {
             Incativate();
         }
     }
 
-    private bool KnockedOut(Collision2D collision)
+    private bool NotKnockedOut(Collision2D collision)
     {
         BirdScript bird = collision.gameObject.GetComponent<BirdScript>();
         return (bird != null || collision.contacts[0].normal.y < -0.5);

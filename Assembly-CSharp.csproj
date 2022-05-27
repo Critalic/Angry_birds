@@ -52,7 +52,9 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\BirdState.cs" />
      <Compile Include="Assets\Scripts\MonsterScript.cs" />
+     <Compile Include="Assets\Scripts\BirdSkinMgr.cs" />
      <Compile Include="Assets\Scripts\BirdScript.cs" />
      <Compile Include="Assets\Scripts\LvlProgressor.cs" />
  <Reference Include="UnityEngine">
