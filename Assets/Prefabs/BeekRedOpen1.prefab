@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2652072521620576734}
   m_Layer: 0
   m_Name: BeekRedOpen1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,6 +190,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528e6c3dfb1ff2948956b5f80fe4b0d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _launchForce: 900
   _resetDelay: 1.79
   _maxDrag: 2.02

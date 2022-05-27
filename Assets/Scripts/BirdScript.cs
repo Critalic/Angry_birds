@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 using DefaultNamespace;
+using DefaultNamespace.State;
 
 using UnityEngine;
 
@@ -16,45 +17,31 @@ public class BirdScript : MonoBehaviour
     private Rigidbody2D _rigidBody;
     private SpriteRenderer _spriteRenderer;
     
-    public BirdState State
+    public StateColor StateColor
     {
         set => _birdState = value;
-    }
-    
-    private void OnEnable()
-    {
-        _rigidBody = GetComponent<Rigidbody2D>();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-        _birdState = GameObject.Find("SkinController").GetComponent<BirdSkinMgr>()
-                .GETState(_rigidBody.gameObject);
     }
 
     void Start()
     {
+        _rigidBody = GetComponent<Rigidbody2D>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _spriteRenderer.color = Color.white;
+        _birdState = GameObject.Find("SkinController").GetComponent<BirdStateColorMgr>().GETInitialState();
+        Debug.Log(_birdState);
+        
         _startPos = _rigidBody.position;
         _rigidBody.isKinematic = true;
     }
 
     private void OnMouseDown()
     {
-        _spriteRenderer.color = Color.yellow;
+        _birdState.MouseDown(_spriteRenderer);
     }
 
     private void OnMouseUp()
     {
-        
-        var currPos = _rigidBody.position;
-        var direction = _startPos - currPos;
-        direction.Normalize();
-        
-        _rigidBody.isKinematic = false;
-        Debug.Log(this._birdState);
-        _rigidBody = _birdState.SetSkin(_rigidBody);
-        Debug.Log(this._birdState);
-
-        //_birdState.sendFlying(direction, _rigidBody);
-
-        _spriteRenderer.color = Color.white;
+        _birdState.MouseUp(_startPos, _rigidBody, _spriteRenderer);
     }
 
     private void OnMouseDrag()
