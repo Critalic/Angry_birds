@@ -1,22 +1,25 @@
-﻿using DefaultNamespace.State;
+﻿using DefaultNamespace.Factory;
+using DefaultNamespace.State;
+
+using State;
 
 using UnityEngine;
 
 namespace DefaultNamespace
 {
-    public class StateColor:BirdState
+    public class ColorStatePreset:BirdState
     {
         
        private float _launchForce;
 
        private readonly Color _color;
-       private readonly BirdStateColorMgr _manager;
+       private readonly ColorStateFactory _colorFactory;
        private readonly BirdScript _bird;
         
-       public StateColor(BirdScript bird, BirdStateColorMgr manager, Color skin)
+       public ColorStatePreset(BirdScript bird, ColorStateFactory colorFactory, Color skin)
        {
            _bird = bird;
-           _manager = manager;
+           _colorFactory = colorFactory;
            _color = skin;
        }
 
@@ -27,8 +30,15 @@ namespace DefaultNamespace
 
        public void MouseDown(SpriteRenderer spriteRenderer)
        {
-           spriteRenderer.color = new Color(_color.r, _color.b, _color.g, 255);
-           _bird.StateColor = _manager.GETNextState();
+           spriteRenderer.color = new Color(_color.r, _color.g, _color.b, 255);
+           if (_launchForce == 0)
+           {
+               _bird.setState(new ColorStateZero(_bird, Color.magenta));
+           } else
+           {
+               _bird.setState(_colorFactory.GETNextState()); 
+           }
+           
        }
        
        public void MouseUp(Vector2 startPos, Rigidbody2D rigidBody, SpriteRenderer spriteRenderer)
@@ -44,7 +54,6 @@ namespace DefaultNamespace
         
            spriteRenderer.color = Color.white;
        }
-
 
        public override string ToString()
        {

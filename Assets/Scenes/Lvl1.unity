@@ -909,6 +909,30 @@ PrefabInstance:
       propertyPath: initLaunchForce
       value: 900
       objectReference: {fileID: 0}
+    - target: {fileID: 8667020703165671879, guid: 7c104e00330cf634da890ae95ca5904c, type: 3}
+      propertyPath: skins.Array.data[0].b
+      value: 0.9622642
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667020703165671879, guid: 7c104e00330cf634da890ae95ca5904c, type: 3}
+      propertyPath: skins.Array.data[0].g
+      value: 0.47810602
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667020703165671879, guid: 7c104e00330cf634da890ae95ca5904c, type: 3}
+      propertyPath: skins.Array.data[0].r
+      value: 0.5224059
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667020703165671879, guid: 7c104e00330cf634da890ae95ca5904c, type: 3}
+      propertyPath: skins.Array.data[1].b
+      value: 0.22172773
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667020703165671879, guid: 7c104e00330cf634da890ae95ca5904c, type: 3}
+      propertyPath: skins.Array.data[1].g
+      value: 0.6608994
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667020703165671879, guid: 7c104e00330cf634da890ae95ca5904c, type: 3}
+      propertyPath: skins.Array.data[1].r
+      value: 0.9528302
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c104e00330cf634da890ae95ca5904c, type: 3}
 --- !u!1 &2091562146

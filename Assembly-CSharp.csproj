@@ -52,12 +52,14 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\State\StateColor.cs" />
+     <Compile Include="Assets\Scripts\State\ColorStatePreset.cs" />
+     <Compile Include="Assets\Scripts\State\BirdState.cs" />
      <Compile Include="Assets\Scripts\MonsterScript.cs" />
-     <Compile Include="Assets\Scripts\State\BirdStateColorMgr.cs" />
+     <Compile Include="Assets\Scripts\Factory\ColorStateFactory.cs" />
      <Compile Include="Assets\Scripts\BirdScript.cs" />
      <Compile Include="Assets\Scripts\LvlProgressor.cs" />
-     <Compile Include="Assets\Scripts\State\BirdState.cs" />
+     <Compile Include="Assets\Scripts\Factory\StateFactory.cs" />
+     <Compile Include="Assets\Scripts\State\ColorStateZero.cs" />
  <Reference Include="UnityEngine">
  <HintPath>D:/Programs/UnityHub/2020.3.26f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>

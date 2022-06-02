@@ -16,19 +16,20 @@ public class BirdScript : MonoBehaviour
     private Vector2 _startPos;
     private Rigidbody2D _rigidBody;
     private SpriteRenderer _spriteRenderer;
-    
-    public StateColor StateColor
+
+    public void setState(BirdState state)
     {
-        set => _birdState = value;
+        Debug.Log("New state - " + _birdState);
+        _birdState = state;
     }
 
     void Start()
-    {
+    {  
         _rigidBody = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _spriteRenderer.color = Color.white;
-        _birdState = GameObject.Find("SkinController").GetComponent<BirdStateColorMgr>().GETInitialState();
-        Debug.Log(_birdState);
+        _birdState = GameObject.Find("SkinController").GetComponent<ColorStateFactory>().GETInitialState();
+        Debug.Log("Initial state - " + _birdState);
         
         _startPos = _rigidBody.position;
         _rigidBody.isKinematic = true;

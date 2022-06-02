@@ -887,6 +887,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BeekRedOpen1
       objectReference: {fileID: 0}
+    - target: {fileID: 2652072521620576728, guid: e8c158e9e8c64d34d8ba8d50545bcf4c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2652072521620576730, guid: e8c158e9e8c64d34d8ba8d50545bcf4c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -7019,7 +7023,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5698555616348777753, guid: 2d498bd771da28b4f9329b8cf72b8cb8, type: 3}
       propertyPath: orthographic size
-      value: 3.600781
+      value: 3.370185
       objectReference: {fileID: 0}
     - target: {fileID: 5698555616348777958, guid: 2d498bd771da28b4f9329b8cf72b8cb8, type: 3}
       propertyPath: m_LocalPosition.x
