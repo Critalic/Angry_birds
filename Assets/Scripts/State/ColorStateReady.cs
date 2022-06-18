@@ -7,16 +7,16 @@ using UnityEngine;
 
 namespace DefaultNamespace
 {
-    public class ColorStatePreset:BirdState
+    public class ColorStateReady:BirdState
     {
         
        private float _launchForce;
 
        private readonly Color _color;
        private readonly ColorStateFactory _colorFactory;
-       private readonly BirdScript _bird;
+       private readonly Bird _bird;
         
-       public ColorStatePreset(BirdScript bird, ColorStateFactory colorFactory, Color skin)
+       public ColorStateReady(Bird bird, ColorStateFactory colorFactory, Color skin)
        {
            _bird = bird;
            _colorFactory = colorFactory;
@@ -31,6 +31,7 @@ namespace DefaultNamespace
        public void MouseDown(SpriteRenderer spriteRenderer)
        {
            spriteRenderer.color = new Color(_color.r, _color.g, _color.b, 255);
+           
            if (_launchForce == 0)
            {
                _bird.setState(new ColorStateZero(_bird, Color.magenta));

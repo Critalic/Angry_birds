@@ -7,8 +7,8 @@ namespace State
     public class ColorStateZero:BirdState
     {
         private readonly Color _color;
-        private readonly BirdScript _bird;
-        public ColorStateZero(BirdScript bird, Color skin)
+        private readonly Bird _bird;
+        public ColorStateZero(Bird bird, Color skin)
         {
             _bird = bird;
             _color = skin;

@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 
 [SelectionBase] 
-public class MonsterScript : MonoBehaviour
+public class Monster : MonoBehaviour
 {
     [SerializeField] private Sprite _knockSprite;
     [SerializeField] private ParticleSystem _particleSystem;
@@ -18,7 +18,7 @@ public class MonsterScript : MonoBehaviour
 
     private bool NotKnockedOut(Collision2D collision)
     {
-        BirdScript bird = collision.gameObject.GetComponent<BirdScript>();
+        Bird bird = collision.gameObject.GetComponent<Bird>();
         return (bird != null || collision.contacts[0].normal.y < -0.5);
     }
 

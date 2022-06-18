@@ -1,13 +1,11 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 
 using DefaultNamespace;
 using DefaultNamespace.State;
 
 using UnityEngine;
 
-public class BirdScript : MonoBehaviour
+public class Bird : MonoBehaviour
 {
     private BirdState _birdState;
     [SerializeField] private float _resetDelay;

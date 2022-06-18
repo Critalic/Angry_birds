@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 using DefaultNamespace.Factory;
 using DefaultNamespace.State;
@@ -16,14 +15,14 @@ namespace DefaultNamespace
         [SerializeField] private float initLaunchForce;
         
         private int _stateCount = 0;
-        readonly List<ColorStatePreset> _states = new List<ColorStatePreset>();
+        readonly List<ColorStateReady> _states = new List<ColorStateReady>();
 
         private void Awake()
         {
-            BirdScript bird = GameObject.FindWithTag("Player").GetComponent<BirdScript>();
+            Bird bird = GameObject.FindWithTag("Player").GetComponent<Bird>();
             foreach (var skin in skins)
             {
-                ColorStatePreset s = new ColorStatePreset(bird, this, skin);
+                ColorStateReady s = new ColorStateReady(bird, this, skin);
                 _states.Add(s);
                 Debug.Log(s);
             }
@@ -32,15 +31,14 @@ namespace DefaultNamespace
         public BirdState GETNextState()
         {
             _stateCount++;
-            ColorStatePreset b = _states[Random.Range(0, _states.Count)];
+            ColorStateReady b = _states[Random.Range(0, _states.Count)];
             b.LaunchForce = initLaunchForce - (_stateCount * 100);
             return b;
-            
         }
 
         public BirdState GETInitialState()
         {
-            ColorStatePreset b = _states[Random.Range(0, _states.Count)];
+            ColorStateReady b = _states[Random.Range(0, _states.Count)];
             b.LaunchForce = initLaunchForce;
             return b;
         }

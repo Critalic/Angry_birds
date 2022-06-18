@@ -8,11 +8,11 @@ public class LvlProgressor : MonoBehaviour
 {
     [SerializeField] private string _nextLvlName;
     
-    private MonsterScript[] _monsters;
+    private Monster[] _monsters;
     
     private void OnEnable()
     {
-        _monsters = FindObjectsOfType<MonsterScript>();
+        _monsters = FindObjectsOfType<Monster>();
     }
 
     // Update is called once per frame
