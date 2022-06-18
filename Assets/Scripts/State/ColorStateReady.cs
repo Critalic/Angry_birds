@@ -32,12 +32,12 @@ namespace DefaultNamespace
        {
            spriteRenderer.color = new Color(_color.r, _color.g, _color.b, 255);
            
-           if (_launchForce == 0)
+           if (_launchForce <= 0)
            {
-               _bird.setState(new ColorStateZero(_bird, Color.magenta));
+               _bird.SetState(new ColorStateZero(_bird, Color.magenta));
            } else
            {
-               _bird.setState(_colorFactory.GETNextState()); 
+               _bird.SetState(_colorFactory.GETNextState()); 
            }
            
        }

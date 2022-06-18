@@ -15,7 +15,7 @@ public class Bird : MonoBehaviour
     private Rigidbody2D _rigidBody;
     private SpriteRenderer _spriteRenderer;
 
-    public void setState(BirdState state)
+    public void SetState(BirdState state)
     {
         Debug.Log("New state - " + _birdState);
         _birdState = state;

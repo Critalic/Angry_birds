@@ -17,7 +17,7 @@ namespace State
         public void MouseDown(SpriteRenderer spriteRenderer)
         {
             spriteRenderer.color = new Color(_color.r, _color.g, _color.b, 255);
-            _bird.setState(new ColorStateZero(_bird, Color.yellow));
+            _bird.SetState(new ColorStateZero(_bird, Color.yellow));
         }
 
         public void MouseUp(Vector2 startPos, Rigidbody2D rigidBody, SpriteRenderer spriteRenderer)
